@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CGPA Calculator</h1>
+  <form>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject"><br><br>
+    <label for="grade">Grade:</label>
+    <select id="grade" name="grade">
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="C+">C+</option>
+      <option value="C">C</option>
+      <option value="D+">D+</option>
+      <option value="D">D</option>
+      <option value="F">F</option>
+    </select><br><br>
+    <label for="credit">Credit:</label>
+    <input type="number" id="credit" name="credit"><br><br>
+    <input type="button" id="addButton" value="Add Subject" onclick="addSubject()">
+  </form>
+  <table id="subject-table">
+  <tr>
+      <th>Subject</th> 
+     <th>Grade</th> 
+      <th>Credit</th>
+      <th>Action</th>
+    </tr> 
+  </table>
+  <p>CGPA: <span id="cgpa">0.00</span></p>
+  <input type="button" value="Calculate CGPA" onclick="calculateCGPA()">
+  <input type="button" value="Reset" onclick="resetForm()">
+  <script src="script.js"></script>
+</body>
+</html>
