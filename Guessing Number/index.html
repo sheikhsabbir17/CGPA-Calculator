@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guessing Game</h1>
+  <p>Enter a number:</p>
+  <input id="user-input" type="number">
+  <button id="submit-btn">Submit</button>
+  <div id="feedback"></div>
+
+  <script>
+   
+    const targetNumber = Math.floor(Math.random() * 100) + 1;
+
+    // Get the input field and button
+    const userInputField = document.getElementById("user-input");
+    const submitButton = document.getElementById("submit-btn");
+    const feedbackDiv = document.getElementById("feedback");
+
+    submitButton.addEventListener("click", () => {
+      
+      const userInput = parseInt(userInputField.value);
+
+      
+      if (isNaN(userInput)) {
+        feedbackDiv.innerText = "Please enter a valid number!";
+      } else {
+        
+        if (userInput > targetNumber) {
+          feedbackDiv.innerText = "Too high! Try again.";
+        } else if (userInput < targetNumber) {
+          feedbackDiv.innerText = "Too low! Try again.";
+        } else {
+          feedbackDiv.innerText = " Congratulations! You guessed the correct number!";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
